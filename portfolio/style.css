@@ -534,7 +534,7 @@ body.light-theme footer {
 }
 #projects {
   padding: 80px 20px;
- 
+  background-color: #0b001a;
   color: white;
   text-align: center;
 }
@@ -763,5 +763,4 @@ body.light-theme footer {
   background: #8e3ffc;
   transform: scale(1.05);
 }
-
 
