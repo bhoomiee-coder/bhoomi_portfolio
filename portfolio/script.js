@@ -59,29 +59,33 @@ if (themeBtn) {
 // ==================== Cursor Blob ====================
 const cursor = document.createElement("div");
 cursor.className = "cursor-blob";
-document.body.appendChild(cursor);
+if (document.body) {
+  document.body.appendChild(cursor);
 
-document.addEventListener("mousemove", (e) => {
-  cursor.style.top = `${e.clientY}px`;
-  cursor.style.left = `${e.clientX}px`;
-});
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.top = `${e.clientY}px`;
+    cursor.style.left = `${e.clientX}px`;
+  });
+}
 
 // ==================== Skill Bar Animation ====================
 const skillFills = document.querySelectorAll(".skill-bar .fill");
-const skillObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const fill = entry.target;
-      const percent = fill.getAttribute("data-percent") || "100";
-      fill.style.width = percent + "%";
-      skillObserver.unobserve(fill);
-    }
-  });
-}, { threshold: 0.3 });
+if (skillFills.length > 0) {
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const fill = entry.target;
+        const percent = fill.getAttribute("data-percent") || "100";
+        fill.style.width = percent + "%";
+        skillObserver.unobserve(fill);
+      }
+    });
+  }, { threshold: 0.3 });
 
-skillFills.forEach(fill => {
-  skillObserver.observe(fill);
-});
+  skillFills.forEach(fill => {
+    skillObserver.observe(fill);
+  });
+}
 
 // ==================== Profile Image Styling ====================
 const profileImg = document.querySelector(".profile-img");
@@ -147,7 +151,7 @@ function closeModal() {
 
 window.addEventListener("click", (e) => {
   const modal = document.getElementById("certModal");
-  if (e.target === modal) {
+  if (modal && e.target === modal) {
     closeModal();
   }
 });
@@ -156,25 +160,26 @@ window.addEventListener("click", (e) => {
 window.showCert = showCert;
 window.closeModal = closeModal;
 
-// Navbar Toggle for Mobile
+// ==================== Navbar Toggle for Mobile ====================
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".navbar ul");
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
-// Theme Toggle
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+}
+
+// ==================== Dark Theme Toggle ====================
 const toggleBtn = document.getElementById('theme-toggle');
-toggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-});
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+  });
+}
 
-// Save Theme Preference
-// if (localStorage.getItem('theme') === 'dark') {
-//   document.body.classList.add('dark');
-// }
-
+// ==================== Mobile Menu Active Class ====================
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('.navbar ul');
@@ -185,4 +190,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
