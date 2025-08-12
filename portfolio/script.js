@@ -52,7 +52,11 @@ if (textEl) {
 const themeBtn = document.getElementById("theme-toggle");
 if (themeBtn) {
   themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light");
+    document.body.classList.toggle("dark");
+    localStorage.setItem(
+      "theme",
+      document.body.classList.contains("dark") ? "dark" : "light"
+    );
   });
 }
 
@@ -61,7 +65,6 @@ const cursor = document.createElement("div");
 cursor.className = "cursor-blob";
 if (document.body) {
   document.body.appendChild(cursor);
-
   document.addEventListener("mousemove", (e) => {
     cursor.style.top = `${e.clientY}px`;
     cursor.style.left = `${e.clientX}px`;
@@ -156,37 +159,14 @@ window.addEventListener("click", (e) => {
   }
 });
 
-// Make functions global so HTML onclick works
 window.showCert = showCert;
 window.closeModal = closeModal;
 
 // ==================== Navbar Toggle for Mobile ====================
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".navbar ul");
-
 if (menuToggle && navLinks) {
   menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
+    navLinks.classList.toggle("active");
   });
 }
-
-// ==================== Dark Theme Toggle ====================
-const toggleBtn = document.getElementById('theme-toggle');
-if (toggleBtn) {
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-  });
-}
-
-// ==================== Mobile Menu Active Class ====================
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('.navbar ul');
-
-  if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-  }
-});
