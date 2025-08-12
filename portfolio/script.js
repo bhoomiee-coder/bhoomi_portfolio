@@ -1,19 +1,19 @@
 (() => {
-  if (window.__portfolioScriptLoaded) return;
-  window.__portfolioScriptLoaded = true;
+  // // if (window.__portfolioScriptLoaded) return;
+  // // window.__portfolioScriptLoaded = true;
 
-  document.addEventListener("DOMContentLoaded", () => {
-    // Reveal on scroll
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1 // Adjust sensitivity
-    });
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   // Reveal on scroll
+  //   const revealObserver = new IntersectionObserver((entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         entry.target.classList.add("visible");
+  //         revealObserver.unobserve(entry.target);
+  //       }
+  //     });
+  //   }, {
+  //     threshold: 0.1 // Adjust sensitivity
+  //   });
 
     document.querySelectorAll(".section").forEach((section) => {
       revealObserver.observe(section);
@@ -45,3 +45,4 @@
     };
   });
 })();
+
