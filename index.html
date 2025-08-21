@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhoomika Khatri | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2d1d5eb6e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- <button id="theme-toggle">🌗</button> -->
+
+
+
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Loading portfolio...</p>
+  </div>
+
+  
+  <style>
+    .section {
+      padding: 40px 20px;
+      max-width: 960px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.7s ease;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+   
+  <!-- Navigation -->
+  
+  <nav class="navbar">
+  <div class="menu-toggle">☰</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+<!-- Hero Section -->
+ 
+  <section class="hero-section">
+    <div class="hero-container">
+     
+      <div class="hero-text">
+        <h1><span class="animated-text">Hi, I'm Bhoomika</span></h1>
+        <p>MCA Graduate | Web Developer</p>
+        <div class="hero-links">
+          <a href="https://www.linkedin.com/in/bhoomika-khatri-62180932a/" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/bhoomiee-coder" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
+          <a href="resume/Bhoomika_Khatri__Resume_fresher.pdf" download class="btn primary"><i class="fas fa-download"></i> Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Main Sections -->
+  <main>
+    <section id="about" class="section about-section">
+  <div class="about-container">
+    <div class="about-img">
+     <img src="images/about.jpg" alt="Workspace">
+
+    </div>
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        A detail-oriented and highly motivated MCA graduate with a strong foundation in software development, web technologies, and problem-solving.<br>
+        Proficient in programming languages. Adept at database management using MySQL.
+        Actively pursuing industry-recognized certifications and consistently upgrading technical skills. Looking to leverage academic knowledge and practical experience in a dynamic IT role within a growth-oriented organization.
+      </p>
+    </div>
+  </div>
+</section>
+
+  <section id="skills" class="skills-section">
+  <h2>My Skills</h2>
+
+  <div class="skill-container">
+    <div class="skill-card"><img src="icons/python.png" alt="Python"></div>
+    <div class="skill-card"><img src="icons/files.png" alt="PHP"></div>
+    <div class="skill-card"><img src="icons/html.png" alt="HTML"></div>
+    <div class="skill-card"><img src="icons/css.png" alt="CSS"></div>
+    <div class="skill-card"><img src="icons/js.png" alt="JavaScript"></div>
+    <div class="skill-card"><img src="icons/sql-server.png" alt="SQL"></div>
+    <div class="skill-card"><img src="icons/logo.png" alt="VS Code"></div>
+  </div>
+</section>
+
+    <section id="projects">
+  <h2>My Projects</h2>
+  <div class="project-card">
+    <img src="images/todo.png" alt="To Do App">
+    <div class="project-content">
+      <h3>To Do App</h3>
+      <p>Created a simple To Do application using HTML, CSS, and JavaScript.</p>
+    </div>
+  </div>
+</section>
+
+<section id="certifications" class="certifications-section">
+  <h2>My Certifications</h2>
+  <div class="cards-container">
+    
+    <div class="card" onclick="showCert('images/tcs.jpg')">
+      <div class="card-icon"><i class="fas fa-flag"></i></div>
+      <div class="card-title">TCS iON Career Edge</div>
+      <div class="card-desc">
+        Young Professional Program on TCS iON Career Edge, covering essential skills for career development.
+      </div>
+    </div>
+
+    <div class="card" onclick="showCert('images/python.jpg')">
+      <div class="card-icon"><i class="fas fa-clone"></i></div>
+      <div class="card-title">Programming in Python</div>
+      <div class="card-desc">
+        Young Professional Program on Infosys Springboard, covering essential skills for career development.
+      </div>
+    </div>
+
+    <div class="card" onclick="showCert('images/accenturesoftwareengineering_page-0001.jpg')">
+      <div class="card-icon"><i class="fas fa-pen-nib"></i></div>
+      <div class="card-title">Accenture</div>
+      <div class="card-desc">Software Engineering (Forage)</div>
+    </div>
+
+    <div class="card" onclick="showCert('images/tata.jpg')">
+      <div class="card-icon"><i class="fas fa-pen-nib"></i></div>
+      <div class="card-title">Tata GenAI</div>
+      <div class="card-desc">Data Analytics (Forage)</div>
+    </div>
+
+    <div class="card" onclick="showCert('images/deloite.jpg')">
+      <div class="card-icon"><i class="fas fa-pen-nib"></i></div>
+      <div class="card-title">Deloitte</div>
+      <div class="card-desc">Data Analytics (Forage)</div>
+    </div>
+  </div>
+</class=>
+
+<!-- Modal Popup -->
+<div class="modal" id="certModal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img id="certImage" src="" alt="Certificate Image">
+</div>
+
+
+    <section id="education" class="section">
+      <h2>Education</h2>
+     
+     <div class="edu-container">
+      <p> Master of Computer Applications (MCA)<br>7.60 CGPA</p>
+      <p>Kamla Nehru Mahavidyalaya, Nagpur (2025)</p>
+      </div>
+ 
+     <div class="edu-container">
+      <p>Bachelor of Science (CS)<br>76%</p>
+      <p>Shankarlal Khandelwal College, Akola (2023)</p>
+     </div>
+      
+       <div class="edu-container">
+        <p>12th – RLT College, Pune Board (2021)<br>65%</p>
+       </div>
+       <div class="edu-container">
+      <p>10th – DAV Convent, Pune Board (2018)<br>85%</p>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <h2>Internship</h2>
+      <div class="edu-container">
+      <p><strong>Web Developer Intern</strong> – Edgemine Technologies (Tech Solve)<br>Nov 2024 – May 2025</p>
+      <p>Worked on real-time front-end and back-end projects using HTML, CSS, JS, and PHP.</p>
+      </div>
+    </section>
+
+    
+    
+      <h2>Contact Me</h2>
+       <section id="contact" class="contact-section">
+ 
+
+  <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+  <p>If you have any questions or would like to get in touch, feel free to reach out!</p>
+  <br>
+  <form action="send_mail.php" method="POST" class="contact-form">
+    <div class="form-group">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+
+    <button type="submit" class="btn-submit">Send Message</button>
+  </form>
+</section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Bhoomika Khatri. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+    </section>
+  </main>
+
+ 
+
+  
