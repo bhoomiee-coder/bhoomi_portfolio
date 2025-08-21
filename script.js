@@ -48,13 +48,7 @@ if (textEl) {
   }, 70);
 }
 
-// ==================== Theme Toggle ====================
-const themeBtn = document.getElementById("theme-toggle");
-if (themeBtn) {
-  themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light");
-  });
-}
+
 
 // ==================== Cursor Blob ====================
 const cursor = document.createElement("div");
@@ -157,23 +151,21 @@ window.showCert = showCert;
 window.closeModal = closeModal;
 
 // Navbar Toggle for Mobile
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".navbar ul");
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
-// Theme Toggle
-const toggleBtn = document.getElementById('theme-toggle');
-toggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+  if (toggleBtn && navLinks) {
+    toggleBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
 });
 
-// Save Theme Preference
-// if (localStorage.getItem('theme') === 'dark') {
-//   document.body.classList.add('dark');
-// }
+
+
+
+
 document.querySelectorAll("a[href^='#']").forEach(link => {
   link.addEventListener("click", e => {
     e.preventDefault();
@@ -188,14 +180,5 @@ document.querySelectorAll("a[href^='#']").forEach(link => {
     }
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('.navbar ul');
 
-  if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-  }
-});
 

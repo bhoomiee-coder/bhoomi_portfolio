@@ -91,11 +91,7 @@ img {
   z-index: 1000;
 }
 
-.navbar ul {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
+
 
 .navbar a {
   color: var(--text-dark);
@@ -238,33 +234,34 @@ img {
 }
 
 /* Mobile (max-width: 768px) */
-@media (max-width: 768px) {
-  .navbar ul {
-    flex-direction: column;
-    background: var(--dark);
-    position: absolute;
-    top: 60px;
-    left: -100%;
-    width: 100%;
-    padding: 20px 0;
-    transition: left 0.3s ease-in-out;
-  }
 
-  .navbar ul.show {
-    left: 0;
-  }
 
   .navbar {
     padding: 10px 20px;
   }
 
-  /* Hamburger Menu Button */
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-    color: var(--text-dark);
-    font-size: 1.8rem;
-  }
+  .navbar ul {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--bg-dark);
+  position: absolute;
+  top: 60px; /* navbar ke neeche khulega */
+  right: 10px;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.navbar ul.active {
+  display: flex;
+}
+
+.menu-toggle {
+  display: block;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
 
   .hero-container {
     flex-direction: column;
@@ -284,7 +281,7 @@ img {
     width: 180px;
     height: 180px;
   }
-}
+
 
 /* Small mobile (max-width: 480px) */
 @media (max-width: 480px) {
