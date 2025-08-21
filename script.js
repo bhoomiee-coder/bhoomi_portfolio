@@ -151,16 +151,16 @@ window.showCert = showCert;
 window.closeModal = closeModal;
 
 // Navbar Toggle for Mobile
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleBtn = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const toggleBtn = document.querySelector(".menu-toggle");
+//   const navLinks = document.querySelector(".nav-links");
 
-  if (toggleBtn && navLinks) {
-    toggleBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-  }
-});
+//   if (toggleBtn && navLinks) {
+//     toggleBtn.addEventListener("click", () => {
+//       navLinks.classList.toggle("active");
+//     });
+//   }
+// });
 
 
 
