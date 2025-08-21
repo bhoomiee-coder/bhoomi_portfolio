@@ -256,11 +256,7 @@ img {
   display: flex;
 }
 
-.menu-toggle {
-  display: block;
-  cursor: pointer;
-  font-size: 2rem;
-}
+
 
 
   .hero-container {
@@ -717,47 +713,7 @@ body.light-theme footer {
   margin-bottom: 20px;
 }
 
-.contact-form .form-group {
-  margin-bottom: 15px;
-  text-align: left;
-}
 
-.contact-form label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 5px;
-}
 
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  outline: none;
-  font-size: 16px;
-  transition: border-color 0.3s;
-}
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #a259ff;
-  box-shadow: 0 0 8px rgba(162,89,255,0.3);
-}
-
-.btn-submit {
-  background: #a259ff;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s, background 0.3s;
-}
-
-.btn-submit:hover {
-  background: #8e3ffc;
-  transform: scale(1.05);
-}
 
