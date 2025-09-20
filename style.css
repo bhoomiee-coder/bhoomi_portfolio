@@ -167,7 +167,7 @@ img {
   min-height: 100vh;
   background-image: url("images/bhoomi_image.jpeg"); /* Your image */
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   display: flex;
   align-items: center;
   justify-content: center;
