@@ -163,7 +163,7 @@ img {
 
 /* Hero Section */
   .hero-section {
-  background-image: url("images/bhoomi_image.jpeg");
+  /* background-image: url("images/bhoomi_image.jpeg"); */
   background-size: cover;       /* full screen cover kare */
   background-position: center top;  /* upar se center kare */
   background-repeat: no-repeat;
